@@ -45,7 +45,7 @@ func _get_player_character() -> PlayerCharacter:
 	return null
 	
 func _get_supply_count(player: PlayerCharacter) -> int:
-	return PlayerCharacter.supply_count
+	return player.supply_count
 	
 func _get_city_time() -> float:
 	return city_time
