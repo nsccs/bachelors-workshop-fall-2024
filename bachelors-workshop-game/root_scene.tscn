@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://hamba2momkwj"]
-
-[ext_resource type="PackedScene" uid="uid://ubde8gsh24gy" path="res://scenes/main_menu.tscn" id="1_k687t"]
-
-[node name="GameManager" type="Node"]
-
-[node name="MainMenu" parent="." instance=ExtResource("1_k687t")]

@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bac0p0x2xlt5x"]
-
-[sub_resource type="Environment" id="Environment_23l4m"]
-
-[node name="GameWorld" type="Node3D"]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_23l4m")
