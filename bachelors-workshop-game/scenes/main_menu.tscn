@@ -1,10 +1,107 @@
-[gd_scene load_steps=2 format=3 uid="uid://ubde8gsh24gy"]
+[gd_scene load_steps=8 format=3 uid="uid://ubde8gsh24gy"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_ct0gd"]
+[ext_resource type="Texture2D" uid="uid://bk0al4je4871h" path="res://assets/menu_background.png" id="2_s5ndi"]
+[ext_resource type="FontFile" uid="uid://0g6r15kwqlo6" path="res://assets/GrapeSoda.ttf" id="3_egl26"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w627p"]
+texture = ExtResource("2_s5ndi")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mfjbb"]
+bg_color = Color(0.898039, 0.768627, 0.976471, 1)
+shadow_size = 5
+shadow_offset = Vector2(-2, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ako8u"]
+bg_color = Color(0.823529, 0.917647, 0.419608, 1)
+shadow_size = 5
+shadow_offset = Vector2(-2, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0pu8"]
+bg_color = Color(0.698039, 0.223529, 0.4, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.823529, 0.917647, 0.419608, 1)
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_offset = Vector2(-2, 5)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 8.0
 script = ExtResource("1_ct0gd")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 645.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_w627p")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 74.0
+offset_right = 622.0
+offset_bottom = 174.0
+theme_override_colors/font_color = Color(0.823529, 0.917647, 0.419608, 1)
+theme_override_fonts/font = ExtResource("3_egl26")
+theme_override_font_sizes/font_size = 100
+text = "Bobapocalypse"
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 235.0
+offset_right = 165.0
+offset_bottom = 377.0
+scale = Vector2(1.70174, 1.69204)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Solo" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_mfjbb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ako8u")
+theme_override_styles/normal = SubResource("StyleBoxFlat_k0pu8")
+text = "Solo
+"
+
+[node name="Host" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_mfjbb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ako8u")
+theme_override_styles/normal = SubResource("StyleBoxFlat_k0pu8")
+text = "Host"
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_mfjbb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ako8u")
+theme_override_styles/normal = SubResource("StyleBoxFlat_k0pu8")
+text = "Options"
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_mfjbb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ako8u")
+theme_override_styles/normal = SubResource("StyleBoxFlat_k0pu8")
+text = "Exit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Solo" to="." method="_on_solo_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
