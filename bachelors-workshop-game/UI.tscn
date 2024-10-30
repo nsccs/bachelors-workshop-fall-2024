@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://3jcvuhmpuuy0"]
+[gd_scene load_steps=3 format=3 uid="uid://3jcvuhmpuuy0"]
 
+[ext_resource type="Script" path="res://scripts/ui_api.gd" id="1_sfbyv"]
 [ext_resource type="Theme" uid="uid://cl7bkxjow7a4o" path="res://our_theme.tres" id="1_tsm54"]
 
 [node name="Node" type="Node"]
+script = ExtResource("1_sfbyv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(9, 26)
@@ -40,9 +42,9 @@ layout_mode = 2
 expand_mode = 2
 stretch_mode = 5
 
-[node name="Label2" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer"]
+[node name="StaminaLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
-text = "Label 2
+text = "Stamina
 "
 
 [node name="TextureRect3" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer"]
