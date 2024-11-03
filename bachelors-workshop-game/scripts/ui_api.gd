@@ -11,12 +11,13 @@ func set_stamina_bar(stamina, max_stamina):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#$CanvasLayer/TimePanelalvContainer3/Timer.wait_time = 60
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$CanvasLayer/TimePanelContainer3/MarginContainer/TimeLabel.text = "%s" % roundf($CanvasLayer/TimePanelalvContainer3/Timer.time_left )
+	$CanvasLayer/TimePanelContainer3/MarginContainer/TimeLabel.text = "%s" % roundf( $CanvasLayer/Timer.time_left )
 	# That's the timer 
 	pass
 

@@ -11,6 +11,10 @@ position = Vector2(9, 26)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="Timer" type="Timer" parent="CanvasLayer"]
+wait_time = 60.0
+autostart = true
+
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
 offset_right = 139.0
 offset_bottom = 133.0
@@ -133,10 +137,6 @@ offset_top = 8.0
 offset_right = -10.0
 offset_bottom = 53.0
 grow_horizontal = 0
-
-[node name="Timer" type="Timer" parent="CanvasLayer/TimePanelContainer3"]
-wait_time = 60.0
-autostart = true
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TimePanelContainer3"]
 layout_mode = 2
