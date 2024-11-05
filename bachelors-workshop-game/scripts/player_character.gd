@@ -17,10 +17,6 @@ var health = 100.0
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
-func _input(event):
-	if event.is_action_pressed("escape"):
-		get_tree().quit()
-	
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		head.rotate_y(-event.relative.x * sensitivity)
