@@ -1,20 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhat256ah86u3"]
+[gd_scene load_steps=4 format=3 uid="uid://bhat256ah86u3"]
 
 [ext_resource type="Script" path="res://scripts/enemy_character.gd" id="1_adtgk"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l4ojx"]
-albedo_color = Color(0.384314, 1, 0.439216, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_5vjmv"]
-material = SubResource("StandardMaterial3D_l4ojx")
+[ext_resource type="PackedScene" uid="uid://b8sapka806s8k" path="res://assets/zomboi.fbx" id="2_u51o7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fwmol"]
 
 [node name="EnemyCharacter" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_adtgk")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_5vjmv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_fwmol")
@@ -24,3 +17,5 @@ shape = SubResource("CapsuleShape3D_fwmol")
 [node name="Skeleton3D" type="Skeleton3D" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="zomboi" parent="." instance=ExtResource("2_u51o7")]
