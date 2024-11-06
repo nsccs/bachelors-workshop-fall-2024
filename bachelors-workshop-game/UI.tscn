@@ -86,7 +86,7 @@ text = "Objective"
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/PanelContainer2/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="CanvasLayer/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="objective_discriptionLabel" type="Label" parent="CanvasLayer/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "Do Objective"
 autowrap_mode = 2

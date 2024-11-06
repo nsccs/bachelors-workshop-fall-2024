@@ -49,3 +49,6 @@ func heal_stamina_bar(recharge):
 	
 func current_stamina_bar():
 	return $CanvasLayer/staminaBar.value
+	
+func set_objective_discription(new_objective_discription):
+	$CanvasLayer/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/objective_discriptionLabel.text = new_objective_discription
