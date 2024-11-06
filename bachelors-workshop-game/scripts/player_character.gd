@@ -16,6 +16,7 @@ var health = 100.0
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	GlobalSettings.connect("mouse_sensitivity_updated", Callable(self, "_on_mouse_sens_updated"))
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -60,3 +61,7 @@ func _physics_process(delta: float) -> void:
 		velocity.z = lerp(velocity.z, direction.z * speed, delta * 4.0)
 
 	move_and_slide()
+
+func _on_mouse_sens_updated(value):
+	sensitivity = value
+	

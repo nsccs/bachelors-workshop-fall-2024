@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://k2no50tdbdk2"]
+[gd_scene load_steps=4 format=3 uid="uid://k2no50tdbdk2"]
 
+[ext_resource type="PackedScene" uid="uid://30e23qaigaj4" path="res://scenes/options_menu_scenes/mouse_slider_settings.tscn" id="1_cig5x"]
 [ext_resource type="PackedScene" uid="uid://dbgfv1kkdjikh" path="res://scenes/options_menu_scenes/Hotkey_Rebind_Button.tscn" id="1_gdlkq"]
 [ext_resource type="PackedScene" uid="uid://cy748ofacqhul" path="res://scenes/options_menu_scenes/audio_slider.tscn" id="3_gk2ny"]
 
@@ -23,10 +24,9 @@ offset_bottom = -90.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 2
+current_tab = 0
 
 [node name="Mouse Controls" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -46,9 +46,8 @@ theme_override_constants/margin_bottom = 24
 layout_mode = 2
 theme_override_constants/separation = 64
 
-[node name="Mouse Sensitivity" type="Label" parent="TabContainer/Mouse Controls/MarginContainer/VBoxContainer"]
+[node name="Mouse_Slider_Settings" parent="TabContainer/Mouse Controls/MarginContainer/VBoxContainer" instance=ExtResource("1_cig5x")]
 layout_mode = 2
-text = "Mouse Sensitivity - Not Currently Working"
 
 [node name="Keyboard Bindings" type="TabBar" parent="TabContainer"]
 visible = false
@@ -88,24 +87,33 @@ action_name = "interact"
 
 [node name="Hotkey_Rebind_Button3" parent="TabContainer/Keyboard Bindings/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_gdlkq")]
 layout_mode = 2
-action_name = "move_up"
+action_name = "move_forward"
 
 [node name="Hotkey_Rebind_Button5" parent="TabContainer/Keyboard Bindings/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_gdlkq")]
 layout_mode = 2
 
 [node name="Hotkey_Rebind_Button4" parent="TabContainer/Keyboard Bindings/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_gdlkq")]
 layout_mode = 2
-action_name = "move_down"
+action_name = "move_backward"
 
 [node name="Hotkey_Rebind_Button6" parent="TabContainer/Keyboard Bindings/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_gdlkq")]
 layout_mode = 2
 action_name = "move_right"
+
+[node name="Hotkey_Rebind_Button8" parent="TabContainer/Keyboard Bindings/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_gdlkq")]
+layout_mode = 2
+action_name = "jump"
+
+[node name="Hotkey_Rebind_Button9" parent="TabContainer/Keyboard Bindings/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_gdlkq")]
+layout_mode = 2
+action_name = "sprint"
 
 [node name="HSeparator2" type="HSeparator" parent="TabContainer/Keyboard Bindings/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 1
 
 [node name="Sound" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
