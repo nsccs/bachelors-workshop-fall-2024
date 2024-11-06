@@ -23,23 +23,28 @@ border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.823529, 0.917647, 0.419608, 1)
+border_color = Color(0.698039, 0.223529, 0.4, 1)
 shadow_color = Color(0, 0, 0, 1)
 shadow_size = 5
 shadow_offset = Vector2(-2, 5)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_bottom = 8.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_ct0gd")
 
 [node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_right = 1153.0
-offset_bottom = 645.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_w627p")
-metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -48,10 +53,11 @@ offset_top = 74.0
 offset_right = 622.0
 offset_bottom = 174.0
 theme_override_colors/font_color = Color(0.823529, 0.917647, 0.419608, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("3_egl26")
 theme_override_font_sizes/font_size = 100
 text = "Bobapocalypse"
-metadata/_edit_use_anchors_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
@@ -60,7 +66,6 @@ offset_top = 235.0
 offset_right = 165.0
 offset_bottom = 377.0
 scale = Vector2(1.70174, 1.69204)
-metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2

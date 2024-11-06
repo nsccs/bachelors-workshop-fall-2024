@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbgfv1kkdjikh"]
+
+[ext_resource type="Script" path="res://scenes/options_menu_scenes/hotkey_rebind_button.gd" id="1_ok4km"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_upunr"]
+bg_color = Color(0.898039, 0.768627, 0.976471, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pr8m8"]
+bg_color = Color(0.823529, 0.917647, 0.419608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p8bne"]
+bg_color = Color(0.698039, 0.223529, 0.4, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.823529, 0.917647, 0.419608, 1)
+
+[node name="Hotkey_Rebind_Button" type="Control" groups=["hotkey_button"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ok4km")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(400, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.823529, 0.917647, 0.419608, 1)
+theme_override_font_sizes/font_size = 28
+text = "ACTION"
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 100
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(225, 0)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+theme_override_styles/hover = SubResource("StyleBoxFlat_upunr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pr8m8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_p8bne")
+toggle_mode = true
+text = "ACTION_KEY"
+
+[connection signal="toggled" from="HBoxContainer/Button" to="." method="_on_button_toggled"]

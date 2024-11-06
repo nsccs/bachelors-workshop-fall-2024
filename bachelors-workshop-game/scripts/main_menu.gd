@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_solo_pressed() -> void:
-	#get_tree().change_scene_to_file("res://game_world.tscn")
+	#get_tree().change_scene_to_file("res://scenes/game_world.tscn")
 	pass
 
 
@@ -21,7 +21,7 @@ func _on_host_pressed() -> void:
 
 
 func _on_options_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://scenes/options_menu.tscn")
 
 
 func _on_exit_pressed() -> void:
