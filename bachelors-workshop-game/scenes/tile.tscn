@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwfoj2gwuf8v4"]
+
+[ext_resource type="Script" path="res://scripts/tile.gd" id="1_ddt6c"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gdu4p"]
+
+[node name="Tile" type="Node2D"]
+script = ExtResource("1_ddt6c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_gdu4p")
