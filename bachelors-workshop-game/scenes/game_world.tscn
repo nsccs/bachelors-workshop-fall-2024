@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bac0p0x2xlt5x"]
+[gd_scene load_steps=7 format=3 uid="uid://bac0p0x2xlt5x"]
 
 [ext_resource type="Script" path="res://scripts/game_world.gd" id="1_ip83h"]
 [ext_resource type="PackedScene" uid="uid://b8hm81ltqhm3s" path="res://scenes/tile.tscn" id="2_dpbf5"]
 [ext_resource type="PackedScene" uid="uid://bmuhy3tsw8a6b" path="res://scenes/building.tscn" id="3_s0kiq"]
+[ext_resource type="Script" path="res://scripts/free_cam.gd" id="4_j4yx2"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_xhu82"]
 
@@ -16,3 +17,10 @@ building = ExtResource("3_s0kiq")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_23l4m")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.16883)
+script = ExtResource("4_j4yx2")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.773486, 0.633813, 0, -0.633813, 0.773486, 0, 2.95851, 2.97254)
