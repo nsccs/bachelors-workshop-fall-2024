@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwfoj2gwuf8v4"]
+[gd_scene load_steps=3 format=3 uid="uid://b8hm81ltqhm3s"]
 
-[ext_resource type="Script" path="res://scripts/tile.gd" id="1_ddt6c"]
+[ext_resource type="Script" path="res://scripts/tile.gd" id="1_rywn7"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gdu4p"]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_5yt5m"]
 
-[node name="Tile" type="Node2D"]
-script = ExtResource("1_ddt6c")
+[node name="Tile" type="Node3D"]
+script = ExtResource("1_rywn7")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("PlaceholderTexture2D_gdu4p")
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = SubResource("PlaceholderTexture2D_5yt5m")

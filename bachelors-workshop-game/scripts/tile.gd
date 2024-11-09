@@ -1,4 +1,4 @@
-extends Node2D
+extends Node3D
 class_name Tile
 
 enum TileType {
@@ -13,7 +13,7 @@ enum TileType {
 
 @export var tile_type: TileType
 
-@onready var sprite := $Sprite2D
+@onready var sprite := $Sprite3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
