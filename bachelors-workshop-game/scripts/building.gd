@@ -20,7 +20,6 @@ func set_mesh_color(instance: MeshInstance3D, color: Color):
 	for surface in mesh.get_surface_count():
 		mesh.surface_get_material(surface).albedo_color = color
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	match building_type:
 		BuildingType.SKYSCRAPER:
@@ -35,7 +34,3 @@ func _ready():
 			set_mesh_color(instance, "#000991")
 		BuildingType.FIRE_STATION:
 			set_mesh_color(instance, "#D1001F")
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
