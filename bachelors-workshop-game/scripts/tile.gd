@@ -2,24 +2,31 @@ extends Node3D
 class_name Tile
 
 enum TileType {
+	NONE,
 	STREET,
-	BUILDING,
 	MEDIAN,
 	PUDDLE,
-	MUD,
-	GARBAGE_FIRE,
 	RUBBLE
 }
 
 @export var tile_type: TileType
 
-@onready var sprite := $Sprite3D
+@onready var instance := $MeshInstance3D
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func set_mesh_color(instance: MeshInstance3D, color: Color):
+	var mesh = instance.mesh
+	for surface in mesh.get_surface_count():
+		mesh.surface_get_material(surface).albedo_color = color
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _ready():
+	match tile_type:
+		TileType.NONE:
+			set_mesh_color(instance, Color(1, 1, 1, 0))
+		TileType.STREET:
+			set_mesh_color(instance, "#343434")
+		TileType.MEDIAN:
+			set_mesh_color(instance, "#FDDA0D")
+		TileType.PUDDLE:
+			set_mesh_color(instance, "#0000AA")
+		TileType.RUBBLE:
+			set_mesh_color(instance, "#D3D3D3")
