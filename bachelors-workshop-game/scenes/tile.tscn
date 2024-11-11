@@ -1,11 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8hm81ltqhm3s"]
+[gd_scene load_steps=4 format=3 uid="uid://b8hm81ltqhm3s"]
 
 [ext_resource type="Script" path="res://scripts/tile.gd" id="1_rywn7"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_5yt5m"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6c45n"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_euidr"]
+material = SubResource("StandardMaterial3D_6c45n")
 
 [node name="Tile" type="Node3D"]
 script = ExtResource("1_rywn7")
+tile_type = 4
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
-texture = SubResource("PlaceholderTexture2D_5yt5m")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_euidr")
