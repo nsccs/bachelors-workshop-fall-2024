@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwc55n76ow5e2"]
+[gd_scene load_steps=7 format=3 uid="uid://bwc55n76ow5e2"]
 
 [ext_resource type="Script" path="res://scenes/shop.gd" id="1_nvsuh"]
 [ext_resource type="Texture2D" uid="uid://csjo0xfxc0wx3" path="res://assets/sewer_bedroom/food/apple.png" id="2_3rcgb"]
+[ext_resource type="Script" path="res://scenes/gold.gd" id="3_qy8sk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xe46w"]
 bg_color = Color(0.898039, 0.768627, 0.976471, 1)
@@ -108,6 +109,15 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_xe46w")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_x3pbp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ogy0y")
 text = "Buy"
+
+[node name="gold" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 448.0
+offset_right = 336.0
+offset_bottom = 487.0
+theme_override_font_sizes/font_size = 24
+script = ExtResource("3_qy8sk")
 
 [connection signal="pressed" from="Close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="Control/next" to="." method="_on_next_pressed"]

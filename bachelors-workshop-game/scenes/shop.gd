@@ -5,7 +5,10 @@ var select = 0;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	$Control/Name.text = GlobalItems.items[currentItem]["Name"]
+	$Control/Sprite2D.texture = GlobalItems.items[currentItem]["icon"]
+	$Control/Description.text = GlobalItems.items[currentItem]["Description"]
+	$Control/Description.text += "\nCost: " + str(GlobalItems.items[currentItem]["Cost"])
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -35,14 +38,18 @@ func _on_next_pressed() -> void:
 
 func _on_buy_pressed() -> void:
 	var hasItem = false
-	for item in GlobalItems.inventory:
-		if GlobalItems.inventory[item]["Name"] == GlobalItems.items[currentItem]["Name"]:
-			GlobalItems.inventory[item]["Count"] += 1
-			hasItem = true;
-	if hasItem == false:
-		var tempDict = GlobalItems.items[currentItem]
-		tempDict["Count"] = 1;
-		GlobalItems.inventory[GlobalItems.inventory.size()] = tempDict
+	var item_cost = GlobalItems.items[currentItem]["Cost"]
+	
+	if GlobalItems.gold >= GlobalItems.items[currentItem]["Cost"]: 
+		for item in GlobalItems.inventory:
+			if GlobalItems.inventory[item]["Name"] == GlobalItems.items[currentItem]["Name"]:
+				GlobalItems.inventory[item]["Count"] += 1
+				hasItem = true;
+		if not hasItem:
+			var tempDict = GlobalItems.items[currentItem]
+			tempDict["Count"] = 1;
+			GlobalItems.inventory[GlobalItems.inventory.size()] = tempDict
+		GlobalItems.gold -= item_cost
 
 	print(GlobalItems.inventory)
 			
