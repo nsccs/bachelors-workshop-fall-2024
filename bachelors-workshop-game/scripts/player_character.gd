@@ -10,6 +10,7 @@ var sensitivity = 0.003
 var gravity = 9.8
 var speed
 var health = 100.0
+var shop_reference = null;
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
@@ -60,3 +61,16 @@ func _physics_process(delta: float) -> void:
 		velocity.z = lerp(velocity.z, direction.z * speed, delta * 4.0)
 
 	move_and_slide()
+
+#Shop Interactions (includes func _process)
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("interact") and shop_reference:
+		shop_reference.open_shop()
+
+func on_shop_area_entered() -> void:
+	print("player is in shop area") #debug message
+	shop_reference = $"../Shop"
+
+func on_shop_area_exited() -> void:
+	print("player exited shop area") #debug message
+	shop_reference = null

@@ -1,0 +1,125 @@
+[gd_scene load_steps=15 format=3 uid="uid://deeaa1ciigs7x"]
+
+[ext_resource type="PackedScene" uid="uid://dixb0v2880b8k" path="res://assets/sewer_bedroom/bedroom.glb" id="2_vsawd"]
+[ext_resource type="PackedScene" uid="uid://dpjwj67mubjqa" path="res://scenes/player_character.tscn" id="2_yomvg"]
+[ext_resource type="PackedScene" uid="uid://ce5expcotcfc6" path="res://assets/sewer_bedroom/bed.glb" id="3_22kd4"]
+[ext_resource type="PackedScene" uid="uid://dgrttu32ycdkl" path="res://assets/sewer_bedroom/desk.glb" id="4_nropw"]
+[ext_resource type="PackedScene" uid="uid://rj7apc72k1gn" path="res://assets/sewer_bedroom/sewerentrance.glb" id="5_hwj1o"]
+[ext_resource type="PackedScene" uid="uid://c5l6coy47vio5" path="res://assets/sewer_bedroom/computer.glb" id="6_xnstx"]
+[ext_resource type="Script" path="res://assets/sewer_bedroom/computer.gd" id="7_ybwoy"]
+[ext_resource type="PackedScene" uid="uid://bwc55n76ow5e2" path="res://scenes/shop.tscn" id="8_cs6fi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vhp3y"]
+size = Vector3(1, 1, 1.76503)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7cqfk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_klw5n"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p5ne1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uqohp"]
+size = Vector3(0.581421, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_htign"]
+size = Vector3(1.34668, 1.35248, 1)
+
+[node name="sewer_bedroom" type="Node3D"]
+
+[node name="Shop" parent="." instance=ExtResource("8_cs6fi")]
+
+[node name="bedroom" parent="." instance=ExtResource("2_vsawd")]
+transform = Transform3D(1, 0, 0, 0, 1.33509, 0, 0, 0, 1, 2.67968, 1.19209e-07, 2.67722)
+
+[node name="WallCollision1" type="StaticBody3D" parent="bedroom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.98421, 0, 0)
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bedroom/WallCollision1"]
+transform = Transform3D(0.0475769, 0, 0, 0, 1.9958, 0, 0, 0, 3.3946, -0.0291104, 0.998544, -3.06621)
+visible = false
+shape = SubResource("BoxShape3D_vhp3y")
+
+[node name="WallCollision2" type="StaticBody3D" parent="bedroom"]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bedroom/WallCollision2"]
+transform = Transform3D(0.0475769, 0, 0, 0, 1.9958, 0, 0, 0, 3.3946, 0.0062604, 0.998544, -3.06621)
+visible = false
+shape = SubResource("BoxShape3D_vhp3y")
+
+[node name="WallCollision3" type="StaticBody3D" parent="bedroom"]
+transform = Transform3D(-0.00870912, 0, -0.999962, 0, 1, 0, 0.999962, 0, -0.00870912, -6.07192, 0, -0.166517)
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bedroom/WallCollision3"]
+transform = Transform3D(0.0475768, 0, 0.00817608, 0, 1.9958, 0, -0.000114592, 0, 3.39459, 0.0704708, 0.998544, -3.06677)
+visible = false
+shape = SubResource("BoxShape3D_vhp3y")
+
+[node name="WallCollision4" type="StaticBody3D" parent="bedroom"]
+transform = Transform3D(-0.00870912, 0, -0.999962, 0, 1, 0, 0.999962, 0, -0.00870912, -6.07192, 0, -6.04465)
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bedroom/WallCollision4"]
+transform = Transform3D(0.0475768, 0, 0.00817608, 0, 1.9958, 0, -0.000114592, 0, 3.39459, -0.0298398, 0.998545, -3.0659)
+visible = false
+shape = SubResource("BoxShape3D_vhp3y")
+
+[node name="FloorCollision" type="StaticBody3D" parent="bedroom"]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bedroom/FloorCollision"]
+transform = Transform3D(5.87804, 0, 0, 0, 0.05705, 0, 0, 0, 5.91299, -3.00205, 0.0381694, -3.07713)
+visible = false
+shape = SubResource("BoxShape3D_7cqfk")
+
+[node name="bed" parent="." instance=ExtResource("3_22kd4")]
+transform = Transform3D(0.0203317, 0, 0.999793, 0, 1, 0, -0.999793, 0, 0.0203317, -2.15668, 0.544642, 1.13332)
+
+[node name="BedCollision" type="StaticBody3D" parent="bed"]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bed/BedCollision"]
+transform = Transform3D(3.06401, 0, 3.72529e-09, 0, 0.752733, 0, 2.98023e-08, 0, 1.92175, 0.346205, -0.162473, -0.00574708)
+shape = SubResource("BoxShape3D_klw5n")
+
+[node name="desk" parent="." instance=ExtResource("4_nropw")]
+transform = Transform3D(-0.00109958, 0, -0.999999, 0, 1, 0, 0.999999, 0, -0.00109958, 1.43383, 0.849336, -2.64839)
+
+[node name="DeskCollision" type="StaticBody3D" parent="desk"]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="desk/DeskCollision"]
+transform = Transform3D(1.05298, 0, 4.65661e-10, 0, 0.775706, 0, 9.31323e-10, 0, 1.90045, 0, -0.342575, 0)
+shape = SubResource("BoxShape3D_p5ne1")
+
+[node name="sewer_entrance" parent="." instance=ExtResource("5_hwj1o")]
+transform = Transform3D(-0.0319072, 0, 1.16999, 0, 1.29542, 0, -0.994299, 0, -0.0375451, 3.44706, -0.0690492, -3.51713)
+
+[node name="computer" parent="." instance=ExtResource("6_xnstx")]
+transform = Transform3D(6.98455e-05, 0, -1, 0, 1, 0, 1, 0, 6.98455e-05, 1.39375, 1.20941, -2.64008)
+script = ExtResource("7_ybwoy")
+
+[node name="ComputerCollision" type="StaticBody3D" parent="computer"]
+transform = Transform3D(1, 0, 7.27596e-12, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+collision_layer = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="computer/ComputerCollision"]
+transform = Transform3D(0.565346, 0.00109911, -0.000538403, -0.000694993, 0.894163, -0.0001787, 0.000334958, 0.000176564, 0.908352, -0.127707, -0.0507511, -7.56979e-05)
+shape = SubResource("BoxShape3D_uqohp")
+
+[node name="ShopArea" type="Area3D" parent="computer"]
+transform = Transform3D(1.51782, 0, 0, 0, 1.28251, 0, 0, 0, 1.00004, 0.0117006, 0, 8.34465e-07)
+collision_layer = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="computer/ShopArea"]
+transform = Transform3D(1.57542, 0, 5.09317e-10, 0, 1, 0, 9.8953e-10, 0, 3.39372, 0.615656, -0.0417951, 0.688606)
+shape = SubResource("BoxShape3D_htign")
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("2_yomvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.904508, 1.01734, 1.34331)
+collision_mask = 6
+
+[connection signal="body_entered" from="computer/ShopArea" to="computer" method="_on_shop_area_body_entered"]
+[connection signal="body_exited" from="computer/ShopArea" to="computer" method="_on_shop_area_body_exited"]
