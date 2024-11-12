@@ -1,6 +1,6 @@
 extends Node
 
-var gold = 10000
+var credits = 10000
 #this should be all the items in the game 
 #Bread, Apple, Soda, Pizza, and Ice Cream are all temp Items
 #key is number, value is another dictionary entry item information

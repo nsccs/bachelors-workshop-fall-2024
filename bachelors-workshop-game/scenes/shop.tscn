@@ -129,7 +129,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_x3pbp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ogy0y")
 text = "Buy"
 
-[node name="gold" type="Label" parent="Control"]
+[node name="credits" type="Label" parent="Control"]
 layout_mode = 0
 offset_left = 224.0
 offset_top = 448.0
