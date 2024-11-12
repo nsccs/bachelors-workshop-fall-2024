@@ -40,7 +40,7 @@ func _on_buy_pressed() -> void:
 	var hasItem = false
 	var item_cost = GlobalItems.items[currentItem]["Cost"]
 	
-	if GlobalItems.gold >= GlobalItems.items[currentItem]["Cost"]: 
+	if GlobalItems.gold >= item_cost:
 		for item in GlobalItems.inventory:
 			if GlobalItems.inventory[item]["Name"] == GlobalItems.items[currentItem]["Name"]:
 				GlobalItems.inventory[item]["Count"] += 1
@@ -50,6 +50,7 @@ func _on_buy_pressed() -> void:
 			tempDict["Count"] = 1;
 			GlobalItems.inventory[GlobalItems.inventory.size()] = tempDict
 		GlobalItems.gold -= item_cost
+		GlobalItems.save_inventory()
 
 	print(GlobalItems.inventory)
 			

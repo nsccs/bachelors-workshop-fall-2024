@@ -14,9 +14,11 @@ func _ready() -> void:
 
 func open_shop():
 	$"../Shop".visible = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func close_shop():
 	$"../Shop".visible = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 
 func _on_shop_area_body_entered(body: Node3D) -> void:

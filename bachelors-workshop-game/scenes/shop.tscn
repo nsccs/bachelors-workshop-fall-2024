@@ -1,8 +1,22 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwc55n76ow5e2"]
+[gd_scene load_steps=10 format=3 uid="uid://bwc55n76ow5e2"]
 
 [ext_resource type="Script" path="res://scenes/shop.gd" id="1_nvsuh"]
 [ext_resource type="Texture2D" uid="uid://csjo0xfxc0wx3" path="res://assets/sewer_bedroom/food/apple.png" id="2_3rcgb"]
 [ext_resource type="Script" path="res://scenes/gold.gd" id="3_qy8sk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13mjx"]
+bg_color = Color(0.898039, 0.768627, 0.976471, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r8v54"]
+bg_color = Color(0.823529, 0.917647, 0.419608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4pkm1"]
+bg_color = Color(0.698039, 0.223529, 0.4, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.823529, 0.917647, 0.419608, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xe46w"]
 bg_color = Color(0.898039, 0.768627, 0.976471, 1)
@@ -42,6 +56,11 @@ offset_left = 880.0
 offset_top = 128.0
 offset_right = 930.0
 offset_bottom = 159.0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_13mjx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_r8v54")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4pkm1")
 text = "Close"
 
 [node name="Control" type="Control" parent="."]

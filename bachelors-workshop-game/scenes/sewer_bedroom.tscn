@@ -117,6 +117,9 @@ collision_layer = 4
 transform = Transform3D(1.57542, 0, 5.09317e-10, 0, 1, 0, 9.8953e-10, 0, 3.39372, 0.615656, -0.0417951, 0.688606)
 shape = SubResource("BoxShape3D_htign")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="computer"]
+light_color = Color(0.529412, 1, 1, 1)
+
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_yomvg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.904508, 1.01734, 1.34331)
 collision_mask = 6
