@@ -34,9 +34,6 @@ func generate_world():
 		
 		# maybe we can weigh different building types later, but for now each 
 		# building has a random chance of being drawn
-		print(x)
-		print(y)
-		print("----------------")
 		for i in range((MIN_SPACE_BETWEEN_BUILDING_AND_STREET / 2) * -1, MIN_SPACE_BETWEEN_BUILDING_AND_STREET / 2):
 			for j in range((MIN_SPACE_BETWEEN_BUILDING_AND_STREET / 2) * -1, MIN_SPACE_BETWEEN_BUILDING_AND_STREET / 2):
 				street_locations.append([x + i, y + j])
