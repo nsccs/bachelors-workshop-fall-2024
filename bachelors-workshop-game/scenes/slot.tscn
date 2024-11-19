@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhyk665odh3nd"]
+
+[ext_resource type="Script" path="res://scenes/slot.gd" id="1_ip141"]
+[ext_resource type="Texture2D" uid="uid://bqbrm20yeysds" path="res://assets/sewer_bedroom/food/pizza.png" id="1_ynhyd"]
+[ext_resource type="PackedScene" uid="uid://dswxxvyedb1dn" path="res://scenes/item_info.tscn" id="3_vedey"]
+
+[node name="Slot" type="Panel"]
+custom_minimum_size = Vector2(200, 28)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ip141")
+
+[node name="icon" type="Sprite2D" parent="."]
+position = Vector2(16, 16)
+texture = ExtResource("1_ynhyd")
+
+[node name="item_name" type="Label" parent="."]
+custom_minimum_size = Vector2(100, 24)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -12.0
+offset_right = 32.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="item_count" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -12.0
+offset_right = -8.0
+offset_bottom = 11.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ItemInfo" parent="." instance=ExtResource("3_vedey")]
+visible = false
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

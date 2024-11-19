@@ -51,7 +51,5 @@ func _on_buy_pressed() -> void:
 			GlobalItems.inventory[GlobalItems.inventory.size()] = tempDict
 		GlobalItems.credits -= item_cost
 		GlobalItems.save_inventory()
-
-	print(GlobalItems.inventory)
 			
 	

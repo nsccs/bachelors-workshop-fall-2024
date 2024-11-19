@@ -37,14 +37,63 @@ var items = {
 	}
 }
 
+#inventory
 var inventory = {
+	0: {
+		"Name" : "Apple",
+		"Description" : "This is an apple.",
+		"Cost" : 50,
+		"icon" : preload("res://assets/sewer_bedroom/food/apple.png"),
+		"Count" : 1
+	},
+	1: {
+		"Name" : "Soda",
+		"Description" : "This is soda.",
+		"Cost" : 100,
+		"icon" : preload("res://assets/sewer_bedroom/food/soda.png"),
+		"Count" : 1
+	},
+	2: {
+		"Name" : "Pizza",
+		"Description" : "This is pizza.",
+		"Cost" : 500,
+		"icon" : preload("res://assets/sewer_bedroom/food/pizza.png"),
+		"Count" : 1
+	},
+	3: {
+		"Name" : "Ice Cream",
+		"Description" : "This is ice cream.",
+		"Cost" : 1000,
+		"icon" : preload("res://assets/sewer_bedroom/food/icecream.png"),
+		"Count" : 1
+	}
 }
+var equipped_items = {0: null}
 
-# Path for the save file
-const SAVE_PATH = "user://inventory_save.json"
+func getInventorySize() -> int:
+	return inventory.size()
+	
+func instantiate(item_id: int, slot_scene: PackedScene) -> Node:
+	if inventory.has(item_id):
+		var slot_instance = slot_scene.instantiate()
+		var item_data = inventory[item_id]
+
+		# Populate slot properties with item data
+		slot_instance.ItemName = item_data["Name"]
+		slot_instance.ItemDescription = item_data["Description"]
+		slot_instance.ItemCost = item_data["Cost"]
+		slot_instance.ItemCount = item_data["Count"]
+		slot_instance.get_node("Icon").texture = load(item_data["Icon"])
+		slot_instance.has_item = true
+
+		return slot_instance
+	return null
 
 
 # Save the inventory to a file
+# Path for the save file
+const SAVE_PATH = "user://inventory_save.json"
+
 # Got a lot of help from ChatGPT for this since I failed at saving something before - Sandra
 func save_inventory():
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE) #opens the file at the save path

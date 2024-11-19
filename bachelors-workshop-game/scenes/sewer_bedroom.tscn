@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://deeaa1ciigs7x"]
+[gd_scene load_steps=16 format=3 uid="uid://deeaa1ciigs7x"]
 
 [ext_resource type="PackedScene" uid="uid://dixb0v2880b8k" path="res://assets/sewer_bedroom/bedroom.glb" id="2_vsawd"]
 [ext_resource type="PackedScene" uid="uid://dpjwj67mubjqa" path="res://scenes/player_character.tscn" id="2_yomvg"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c5l6coy47vio5" path="res://assets/sewer_bedroom/computer.glb" id="6_xnstx"]
 [ext_resource type="Script" path="res://assets/sewer_bedroom/computer.gd" id="7_ybwoy"]
 [ext_resource type="PackedScene" uid="uid://bwc55n76ow5e2" path="res://scenes/shop.tscn" id="8_cs6fi"]
+[ext_resource type="PackedScene" uid="uid://d0db30xd0noii" path="res://scenes/inventory.tscn" id="9_rp7ug"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vhp3y"]
 size = Vector3(1, 1, 1.76503)
@@ -123,6 +124,9 @@ light_color = Color(0.529412, 1, 1, 1)
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_yomvg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.904508, 1.01734, 1.34331)
 collision_mask = 6
+
+[node name="Inventory" parent="PlayerCharacter" instance=ExtResource("9_rp7ug")]
+visible = false
 
 [connection signal="body_entered" from="computer/ShopArea" to="computer" method="_on_shop_area_body_entered"]
 [connection signal="body_exited" from="computer/ShopArea" to="computer" method="_on_shop_area_body_exited"]
