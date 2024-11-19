@@ -1,7 +1,7 @@
 extends Node3D
 class_name GameWorld
 
-const MAP_SIZE = 200 # map is a square, this is effectively its length and width in tiles.
+const MAP_SIZE = 100 # map is a square, this is effectively its length and width in tiles.
 const TILE_SIZE = 32 
 const BUILDING_COUNT = 20
 const PUDDLE_FACTOR = 0.2 # this number needs playing around with. just know that higher = higher likelihood
@@ -79,7 +79,7 @@ func generate_world():
 					filled_locations.append([x + i, y + j, true])
 		generate_building(x, y, rng.randi_range(0, BuildingType.size() - 1))
 		
-		generate_remainder()
+	generate_remainder()
 
 # todo
 func destroy_world():
