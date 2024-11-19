@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bup22ej4wqk3b"]
+
+[ext_resource type="Script" path="res://scripts/buildings/restaurant.gd" id="1_lhejt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_keb80"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_jljc7"]
+material = SubResource("StandardMaterial3D_keb80")
+
+[node name="Restaurant" type="Node3D"]
+script = ExtResource("1_lhejt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_jljc7")
