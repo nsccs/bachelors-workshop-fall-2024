@@ -4,6 +4,10 @@ var game_state
 var city_time = 0
 var city_time_is_stopped := false
 
+var loading_screen = preload("res://scenes/loading_screen.tscn")
+# Use this var to load using a loading screen 
+var next_scene : String = "res://scenes/sewer_bedroom.tscn"
+
 enum GameState {
 	MAIN_MENU,
 	IN_GAME,

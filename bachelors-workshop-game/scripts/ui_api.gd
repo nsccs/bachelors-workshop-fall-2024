@@ -2,7 +2,7 @@ extends Node
 class_name UI
 @onready var stamina_label = $CanvasLayer/PanelContainer/MarginContainer/GridContainer/StaminaLabel
 @onready var heakth_bar = $CanvasLayer/HealthBar
-
+# Benjamin Guth
 
 
 func set_stamina_bar(stamina, max_stamina):
