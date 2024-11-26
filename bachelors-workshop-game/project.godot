@@ -18,6 +18,7 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 GlobalItems="*res://scripts/global_items.gd"
+GameManager="*res://scripts/game_manager.gd"
 
 [input]
 
