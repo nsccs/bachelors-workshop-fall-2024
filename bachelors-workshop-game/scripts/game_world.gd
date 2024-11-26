@@ -145,7 +145,7 @@ func split(iterations: int, direction: int, x_min: int, x_max: int, z_min: int, 
 # as of now, just generates the border
 # todo: why is it not rubble? also create algo to spawn rubble in sightlines
 func generate_rubble():
-	for i in MAP_SIZE:
+	for i in range(0, MAP_SIZE + 1):
 		generate_tile(i, 0, 0, TileType.RUBBLE)
 		filled_locations.append([i, 0, true])
 		generate_tile(i, 0, MAP_SIZE, TileType.RUBBLE)
