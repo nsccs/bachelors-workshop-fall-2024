@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://brsq54sa7doxr"]
+
+[ext_resource type="Script" path="res://scripts/ground/none.gd" id="1_ptvha"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ukkjo"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ip3dd"]
+material = SubResource("StandardMaterial3D_ukkjo")
+
+[node name="None" type="Node3D"]
+script = ExtResource("1_ptvha")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_ip3dd")
