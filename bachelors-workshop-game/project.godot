@@ -17,11 +17,8 @@ config/icon="res://assets/icon.svg"
 
 [autoload]
 
-DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/discord-rpc-gd/plugin.cfg", "res://addons/wakatime/plugin.cfg")
+GlobalItems="*res://scripts/global_items.gd"
+GameManager="*res://scripts/game_manager.gd"
 
 [input]
 
