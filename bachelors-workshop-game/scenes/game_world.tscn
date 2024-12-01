@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bup22ej4wqk3b" path="res://scenes/buildings/restaurant.tscn" id="5_r0pxi"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_xhu82"]
+seed = 6
 
 [sub_resource type="Environment" id="Environment_23l4m"]
 

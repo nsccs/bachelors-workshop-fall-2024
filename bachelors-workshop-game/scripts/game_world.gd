@@ -53,7 +53,7 @@ enum TileType {
 func generate_world():
 	
 	# border
-	generate_rubble()
+	generate_border()
 	
 	# roads
 	generate_roads(SPLIT_ITERATIONS)
@@ -79,7 +79,12 @@ func generate_world():
 					filled_locations.append([x + i, y + j, true])
 		generate_building(x, y, rng.randi_range(0, BuildingType.size() - 1))
 		
+	
 	generate_remainder()
+	
+	# rubble
+	generate_rubble()
+
 
 # todo
 func destroy_world():
@@ -145,7 +150,7 @@ func split(iterations: int, direction: int, x_min: int, x_max: int, y_min: int, 
 
 # as of now, just generates the border
 # todo: why is it not rubble? also create algo to spawn rubble in sightlines
-func generate_rubble():
+func generate_border():
 	for i in MAP_SIZE:
 		generate_tile(i, 0, 0.0, TileType.RUBBLE)
 		filled_locations.append([i, 0, true])
@@ -155,6 +160,26 @@ func generate_rubble():
 		filled_locations.append([0, i, true])
 		generate_tile(MAP_SIZE, i, 0.0, TileType.RUBBLE)
 		filled_locations.append([MAP_SIZE, i, true])
+
+func generate_rubble():
+	for x in range(MAP_SIZE):
+		for y in range(MAP_SIZE):
+			# Ensure rubble stays in the exterior of the map and avoids buildings and streets
+			if (x > MIN_SPACE_BETWEEN_BUILDING_AND_STREET and x < MAP_SIZE - MIN_SPACE_BETWEEN_BUILDING_AND_STREET and
+				y > MIN_SPACE_BETWEEN_BUILDING_AND_STREET and y < MAP_SIZE - MIN_SPACE_BETWEEN_BUILDING_AND_STREET):
+				# Avoid collisions with filled locations
+				if !is_filled(x, y):
+					# Use noise to randomize rubble placement
+					var noise_value = noise.get_noise_2d(x, y)
+					if noise_value > 0.1:  # Adjust threshold as needed
+						var noise_map = noise.get_noise_2d(x, y)
+						if noise_map > 0.1:
+							generate_tile(x, y, 0.0, TileType.RUBBLE)
+							filled_locations.append([x, y, true])
+
+func is_filled(x: int, y: int) -> bool:
+	return filled_locations.has([x, y, true])
+
 
 # adds a tile node to the world
 func generate_tile(x: int, y: int, z: int, type: TileType = TileType.NONE):
